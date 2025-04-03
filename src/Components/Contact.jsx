@@ -56,7 +56,7 @@ const Contact = () => {
                 <div className="ml-5">
                   <h3 className="text-lg font-semibold text-gray-800">Phone</h3>
                   <p className="mt-1 text-gray-600">
-                    +91 98765 43210 {/* Replace with actual number */}
+                    +16692503102 {/* Replace with actual number */}
                   </p>
                 </div>
               </div>
