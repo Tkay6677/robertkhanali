@@ -104,7 +104,7 @@ const Contact = () => {
                   <h3 className="text-lg font-semibold text-gray-800">Follow Us</h3>
                   <div className="mt-2 flex space-x-4">
                     <a
-                      href="https://facebook.com/mrkhanmanifest" // Replace with actual link
+                      href="https://www.facebook.com/share/1A5RyUJP87/" // Replace with actual link
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300"
@@ -121,7 +121,7 @@ const Contact = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://tiktok.com/@mrkhanmanifest" // Replace with actual link
+                      href="https://www.tiktok.com/@khan_ali094?_t=ZT-8vAKCt72GlC&_r=1" // Replace with actual link
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300"
@@ -138,7 +138,7 @@ const Contact = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://quora.com/profile/Mr-Khan-Manifest" // Replace with actual link
+                      href="https://www.quora.com/profile/Robert-Khan-Ali?ch=10&oid=1334926317&share=d31bb5d6&srid=uaqyez&target_type=user" // Replace with actual link
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300"
@@ -155,6 +155,31 @@ const Contact = () => {
                       </svg>
                     </a>
                   </div>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-clock h-7 w-7 text-green-600"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <div className="ml-5">
+                  <h3 className="text-lg font-semibold text-gray-800">Opening Hours</h3>
+                  <p className="mt-1 text-gray-600">
+                    Monday - Friday: 9:00 AM - 6:00 PM <br />
+                    Saturday: 10:00 AM - 2:00 PM <br />
+                    Sunday: Closed
+                  </p>
                 </div>
               </div>
             </div>

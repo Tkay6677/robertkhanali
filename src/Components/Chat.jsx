@@ -19,7 +19,7 @@ const Chat = () => {
       setTimeout(() => {
         setMessages((prev) => [
           ...prev,
-          { text: "Thank you for your message! Mr. Khan will be with you shortly", sender: "bot" },
+          { text: "Thank you for your message! we will be with you shortly", sender: "bot" },
         ]);
       }, 1000);
     }
@@ -43,7 +43,7 @@ const Chat = () => {
           {/* Header */}
           <div className="flex justify-between items-center p-4 bg-indigo-50 rounded-t-2xl">
             <h3 className="text-lg font-semibold text-indigo-900">
-              Chat with Mr. Khan
+              Contact Support
             </h3>
             <button onClick={toggleChat} className="text-gray-600 hover:text-gray-800">
               <X className="h-6 w-6" />

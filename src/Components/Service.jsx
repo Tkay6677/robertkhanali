@@ -1,17 +1,19 @@
 const Service = () => {
   return (
-    <div className="py-24" id="services">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="py-24 relative" id="services">
+      {/* Section-Specific Overlay to Darken Background */}
+      <div className="absolute inset-0 bg-black/70 z-0"></div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl tracking-tight drop-shadow-md">
+          <h2 className="text-3xl font-extrabold text-white sm:text-4xl tracking-tight drop-shadow-lg">
             Our Transformative Offerings
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-xl text-white font-medium drop-shadow-md">
+          <p className="mt-4 max-w-2xl mx-auto text-xl text-white font-medium drop-shadow-lg">
             Guiding you to harness your thoughts, energy, and intentions for a life of purpose and abundance.
           </p>
         </div>
         <div className="mt-20 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
-          <div className="relative p-6 bg-white/95 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-purple-400">
+          <div className="relative p-6 bg-white/90 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-purple-400">
             <div className="w-14 h-14 rounded-full bg-purple-100 flex items-center justify-center mb-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -31,14 +33,14 @@ const Service = () => {
                 <path d="M19 14c1.1 0 2 1 2 2.2 0 2.1-2 4.8-2 4.8"></path>
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">
+            <h3 className="text-xl font-semibold text-gray-800 mb-3 drop-shadow-md">
               Personal Coaching
             </h3>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 leading-relaxed font-medium drop-shadow-md">
               Tailored support to break free from limitations and manifest your deepest desires.
             </p>
           </div>
-          <div className="relative p-6 bg-white/95 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-blue-400">
+          <div className="relative p-6 bg-white/90 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-blue-400">
             <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center mb-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -61,14 +63,14 @@ const Service = () => {
                 <line x1="22" x2="22" y1="22" y2="22"></line>
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">
+            <h3 className="text-xl font-semibold text-gray-800 mb-3 drop-shadow-md">
               Manifestation Workshops
             </h3>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 leading-relaxed font-medium drop-shadow-md">
               Group sessions to master the Law of Attraction and align your energy with your goals.
             </p>
           </div>
-          <div className="relative p-6 bg-white/95 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-yellow-400">
+          <div className="relative p-6 bg-white/90 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-yellow-400">
             <div className="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center mb-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -87,14 +89,14 @@ const Service = () => {
                 <path d="m15 9 1.5-1.5m-7.5 1.5L7.5 7.5m1.5 7.5L7.5 16.5m7.5-1.5 1.5 1.5"></path>
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">
+            <h3 className="text-xl font-semibold text-gray-800 mb-3 drop-shadow-md">
               Spiritual Guidance
             </h3>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 leading-relaxed font-medium drop-shadow-md">
               Connect with your higher self and explore your spiritual path across all traditions.
             </p>
           </div>
-          <div className="relative p-6 bg-white/95 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-indigo-400">
+          <div className="relative p-6 bg-white/90 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-indigo-400">
             <div className="w-14 h-14 rounded-full bg-indigo-100 flex items-center justify-center mb-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -112,10 +114,10 @@ const Service = () => {
                 <circle cx="12" cy="12" r="3"></circle>
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">
+            <h3 className="text-xl font-semibold text-gray-800 mb-3 drop-shadow-md">
               Mindfulness Practices
             </h3>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 leading-relaxed font-medium drop-shadow-md">
               Cultivate self-awareness and inner peace through meditation and reflection.
             </p>
           </div>

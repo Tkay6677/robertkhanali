@@ -33,13 +33,15 @@ const testimonials = [
 
 const Testimonial = () => {
   return (
-    <div className="py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="py-24 relative" id="testimonials">
+      {/* Section-Specific Overlay to Darken Background */}
+      <div className="absolute inset-0 bg-black/70 z-0"></div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl tracking-tight drop-shadow-md">
+          <h2 className="text-3xl font-extrabold text-white sm:text-4xl tracking-tight drop-shadow-lg">
             What Our Clients Say
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-xl text-white font-medium drop-shadow-md">
+          <p className="mt-4 max-w-2xl mx-auto text-xl text-white font-medium drop-shadow-lg">
             Hear from those who’ve transformed their lives with Mr. Khan’s guidance.
           </p>
         </div>
@@ -47,7 +49,7 @@ const Testimonial = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white/95 rounded-2xl shadow-lg p-6 transform hover:-translate-y-2 transition-all duration-300 border-t-4 border-indigo-400"
+              className="bg-white/90 rounded-2xl shadow-lg p-6 transform hover:-translate-y-2 transition-all duration-300 border-t-4 border-indigo-400"
             >
               <div className="flex items-center mb-4">
                 <img
@@ -56,13 +58,15 @@ const Testimonial = () => {
                   className="w-14 h-14 rounded-full object-cover border-2 border-indigo-200"
                 />
                 <div className="ml-4">
-                  <h3 className="text-lg font-semibold text-gray-800">
+                  <h3 className="text-lg font-semibold text-gray-800 drop-shadow-md">
                     {testimonial.name}
                   </h3>
-                  <p className="text-indigo-600 text-sm">{testimonial.role}</p>
+                  <p className="text-indigo-600 text-sm font-medium drop-shadow-md">
+                    {testimonial.role}
+                  </p>
                 </div>
               </div>
-              <p className="text-gray-600 italic leading-relaxed">
+              <p className="text-gray-600 italic leading-relaxed font-medium drop-shadow-md">
                 "{testimonial.quote}"
               </p>
             </div>
