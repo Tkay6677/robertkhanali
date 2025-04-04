@@ -1,8 +1,73 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTiktok, faQuora, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 const Contact = () => {
+  // State to manage form inputs
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  // State to manage form submission status
+  const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Handle input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setStatus("Please fill in all fields.");
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setStatus("Please enter a valid email address.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setStatus("");
+
+    try {
+      // Send form data to the Vercel Serverless Function
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setStatus("Message sent successfully! We’ll get back to you soon.");
+        setFormData({ name: "", email: "", message: "" }); // Reset form
+      } else {
+        setStatus(result.message || "Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      setStatus("Failed to send message. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="py-24 bg-gradient-to-b from-purple-50 to-white" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,7 +101,8 @@ const Contact = () => {
                 <div className="ml-5">
                   <h3 className="text-lg font-semibold text-gray-800">Email</h3>
                   <p className="mt-1 text-gray-600">
-                    healerkhanali@gmail.com {/* Replace with actual email */}
+                    {/* Since you don’t have access to healerkhanali@gmail.com, direct users to the form */}
+                    Contact us using the form on this page.
                   </p>
                 </div>
               </div>
@@ -57,9 +123,7 @@ const Contact = () => {
                 </svg>
                 <div className="ml-5">
                   <h3 className="text-lg font-semibold text-gray-800">Phone</h3>
-                  <p className="mt-1 text-gray-600">
-                    +16692503102 {/* Replace with actual number */}
-                  </p>
+                  <p className="mt-1 text-gray-600">+16692503102</p>
                 </div>
               </div>
               <div className="flex items-center">
@@ -81,7 +145,7 @@ const Contact = () => {
                 <div className="ml-5">
                   <h3 className="text-lg font-semibold text-gray-800">Office</h3>
                   <p className="mt-1 text-gray-600">
-                    1743 Bayou Bleu Drive Lafayette, LA 70508 {/* Replace with actual address */}
+                    1743 Bayou Bleu Drive Lafayette, LA 70508
                   </p>
                 </div>
               </div>
@@ -106,7 +170,7 @@ const Contact = () => {
                   <h3 className="text-lg font-semibold text-gray-800">Follow Us</h3>
                   <div className="mt-2 flex space-x-4">
                     <a
-                      href="https://www.facebook.com/share/1A5RyUJP87/" // Replace with actual link
+                      href="https://www.facebook.com/share/1A5RyUJP87/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300"
@@ -114,7 +178,7 @@ const Contact = () => {
                       <FontAwesomeIcon icon={faFacebook} className="h-6 w-6" />
                     </a>
                     <a
-                      href="https://www.tiktok.com/@khan_ali094?_t=ZT-8vAKCt72GlC&_r=1" // Replace with actual link
+                      href="https://www.tiktok.com/@khan_ali094?_t=ZT-8vAKCt72GlC&_r=1"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300"
@@ -122,7 +186,7 @@ const Contact = () => {
                       <FontAwesomeIcon icon={faTiktok} className="h-6 w-6" />
                     </a>
                     <a
-                      href="https://www.quora.com/profile/Robert-Khan-Ali?ch=10&oid=1334926317&share=d31bb5d6&srid=uaqyez&target_type=user" // Replace with actual link
+                      href="https://www.quora.com/profile/Robert-Khan-Ali?ch=10&oid=1334926317&share=d31bb5d6&srid=uaqyez&target_type=user"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300"
@@ -130,7 +194,7 @@ const Contact = () => {
                       <FontAwesomeIcon icon={faQuora} className="h-6 w-6" />
                     </a>
                     <a
-                      href="https://wa.me/+16692503102" // Replace with actual WhatsApp link (e.g., https://wa.me/<phone-number>)
+                      href="https://wa.me/+16692503102"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300"
@@ -168,7 +232,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="lg:col-span-2">
-            <form className="grid grid-cols-1 gap-y-6">
+            <form className="grid grid-cols-1 gap-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="name"
@@ -182,7 +246,8 @@ const Contact = () => {
                   id="name"
                   name="name"
                   className="mt-1 block w-full rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 py-3 px-5 transition-all duration-300"
-                  value=""
+                  value={formData.name}
+                  onChange={handleChange}
                 />
               </div>
               <div>
@@ -198,7 +263,8 @@ const Contact = () => {
                   name="email"
                   placeholder="Enter Email"
                   className="mt-1 block w-full rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 py-3 px-5 transition-all duration-300"
-                  value=""
+                  value={formData.email}
+                  onChange={handleChange}
                 />
               </div>
               <div>
@@ -214,14 +280,17 @@ const Contact = () => {
                   placeholder="Send a message"
                   rows="4"
                   className="mt-1 block w-full rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 px-5 py-5 transition-all duration-300"
+                  value={formData.message}
+                  onChange={handleChange}
                 ></textarea>
               </div>
               <div>
                 <button
                   type="submit"
                   className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 shadow-md hover:shadow-lg transition-all duration-300"
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -239,6 +308,17 @@ const Contact = () => {
                   </svg>
                 </button>
               </div>
+              {status && (
+                <p
+                  className={`mt-4 text-center ${
+                    status.includes("successfully")
+                      ? "text-green-600"
+                      : "text-red-600"
+                  }`}
+                >
+                  {status}
+                </p>
+              )}
             </form>
           </div>
         </div>
