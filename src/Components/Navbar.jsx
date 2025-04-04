@@ -32,9 +32,11 @@ const Navbar = () => {
           </a>
         </div>
         <div className="hidden md:block">
+          <a href="#contact">
           <button className="md:bg-[#4B0082] md:text-[#FFD700] md:px-3 md:py-2 lg:px-5 rounded hover:bg-[#8A9A5B] transition-colors">
             Client Portal
           </button>
+          </a>
         </div>
         <div className="block md:hidden">
           <span
