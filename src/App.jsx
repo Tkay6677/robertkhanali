@@ -9,6 +9,7 @@ import Team from "./Components/Team";
 import Courses from "./Components/Course";
 import Gallery from "./Components/Gallery";
 import Testimonial from "./Components/Testimonial";
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
         <Courses />
         <Testimonial />
         <Contact />
+        <TawkMessengerReact 
+        propertyId="67efbb8da6bb051910f573cf"
+        widgetId="1io0799tl"
+        />
       </main>
     </div>
   );
