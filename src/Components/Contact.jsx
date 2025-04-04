@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTiktok, faQuora, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   // State to manage form inputs
@@ -24,7 +25,7 @@ const Contact = () => {
   };
 
   // Handle form submission
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     // Basic validation
@@ -43,29 +44,29 @@ const Contact = () => {
     setIsSubmitting(true);
     setStatus("");
 
-    try {
-      // Send form data to the Vercel Serverless Function
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+    // Send email using EmailJS
+    emailjs
+      .send(
+        "service_op7z8fa", // Replace with your EmailJS Service ID (e.g., service_abc123)
+        "template_qdaxqpp", // Replace with your EmailJS Template ID (e.g., template_def456)
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
         },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        setStatus("Message sent successfully! We’ll get back to you soon.");
-        setFormData({ name: "", email: "", message: "" }); // Reset form
-      } else {
-        setStatus(result.message || "Failed to send message. Please try again later.");
-      }
-    } catch (error) {
-      setStatus("Failed to send message. Please try again later.");
-    } finally {
-      setIsSubmitting(false);
-    }
+        "a4poa-nWkAlpR-sn_" // Replace with your EmailJS User ID (e.g., user_ghi789)
+      )
+      .then(
+        (result) => {
+          setStatus("Message sent successfully! We’ll get back to you soon.");
+          setFormData({ name: "", email: "", message: "" }); // Reset form
+          setIsSubmitting(false);
+        },
+        (error) => {
+          setStatus("Failed to send message. Please try again later.");
+          setIsSubmitting(false);
+        }
+      );
   };
 
   return (
