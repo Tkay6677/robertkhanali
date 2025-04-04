@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faTiktok, faQuora, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 const Contact = () => {
   return (
@@ -109,16 +111,7 @@ const Contact = () => {
                       rel="noopener noreferrer"
                       className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="h-6 w-6"
-                      >
-                        <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-                      </svg>
+                      <FontAwesomeIcon icon={faFacebook} className="h-6 w-6" />
                     </a>
                     <a
                       href="https://www.tiktok.com/@khan_ali094?_t=ZT-8vAKCt72GlC&_r=1" // Replace with actual link
@@ -126,16 +119,7 @@ const Contact = () => {
                       rel="noopener noreferrer"
                       className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="h-6 w-6"
-                      >
-                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.55 2.89 2.89 0 0 1 2.89 2.89V6.69h-3.45V4.25a4.83 4.83 0 0 0 3.77 4.44h3.45v3.45a8.89 8.89 0 0 0-5.2-1.74 8.89 8.89 0 0 0-8.89 8.89 8.89 8.89 0 0 0 8.89 8.89 8.89 8.89 0 0 0 8.89-8.89V6.69z" />
-                      </svg>
+                      <FontAwesomeIcon icon={faTiktok} className="h-6 w-6" />
                     </a>
                     <a
                       href="https://www.quora.com/profile/Robert-Khan-Ali?ch=10&oid=1334926317&share=d31bb5d6&srid=uaqyez&target_type=user" // Replace with actual link
@@ -143,16 +127,15 @@ const Contact = () => {
                       rel="noopener noreferrer"
                       className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="h-6 w-6"
-                      >
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.86 15.93c-1.23.37-2.51.58-3.86.58-3.31 0-6-1.69-6-4.5s2.69-4.5 6-4.5c1.35 0 2.63.21 3.86.58-.24 1.02-.36 2.11-.36 3.24 0 1.13.12 2.22.36 3.24zm4.64-1.93c-.09.45-.23.88-.41 1.28-.62 1.4-1.67 2.38-3.23 2.38-1.56 0-2.61-.98-3.23-2.38-.18-.4-.32-.83-.41-1.28-.09-.45-.14-.92-.14-1.4 0-.48.05-.95.14-1.4.09-.45.23-.88.41-1.28.62-1.4 1.67-2.38 3.23-2.38 1.56 0 2.61.98 3.23 2.38.18.4.32.83.41 1.28.09.45.14.92.14 1.4 0 .48-.05.95-.14 1.4z" />
-                      </svg>
+                      <FontAwesomeIcon icon={faQuora} className="h-6 w-6" />
+                    </a>
+                    <a
+                      href="https://wa.me/+16692503102" // Replace with actual WhatsApp link (e.g., https://wa.me/<phone-number>)
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300"
+                    >
+                      <FontAwesomeIcon icon={faWhatsapp} className="h-6 w-6" />
                     </a>
                   </div>
                 </div>
