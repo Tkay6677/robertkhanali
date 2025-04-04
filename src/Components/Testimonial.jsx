@@ -21,7 +21,7 @@ const testimonials = [
   {
     name: "Lakshmi Nair",
     role: "Student",
-    image: "https://images.unsplash.com/photo-1517841902196-4c2c6f7b0b0e?q=80&w=1470", // Placeholder: young woman studying
+    image: "https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1470", // Placeholder: young woman studying
     quote:
       "His workshops on overcoming limiting beliefs gave me the confidence to pursue my goals. I’ve never felt more aligned with my true purpose—thank you, Mr. Khan!",
   },
