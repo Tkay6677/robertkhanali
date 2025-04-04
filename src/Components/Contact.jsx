@@ -103,7 +103,7 @@ const Contact = () => {
                   <h3 className="text-lg font-semibold text-gray-800">Email</h3>
                   <p className="mt-1 text-gray-600">
                     {/* Since you don’t have access to healerkhanali@gmail.com, direct users to the form */}
-                    Contact us using the form on this page.
+                    healerkhanali@gmail.com
                   </p>
                 </div>
               </div>
