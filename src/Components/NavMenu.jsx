@@ -17,11 +17,11 @@ const NavMenu = ({navOpen, setNavOpen}) => {
           link: '#services',
           className: 'nav-link'
         },
-        {
-          label: 'Products',
-          link: '#products',
-          className: 'nav-link'
-        },
+        // {
+        //   label: 'Products',
+        //   link: '#products',
+        //   className: 'nav-link'
+        // },
         {
           label: 'Contact',
           link: '#contact',
