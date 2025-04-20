@@ -170,14 +170,14 @@ const Contact = () => {
                 <div className="ml-5">
                   <h3 className="text-lg font-semibold text-gray-800">Follow Us</h3>
                   <div className="mt-2 flex space-x-4">
-                    <a
+                    {/* <a
                       href="https://www.facebook.com/share/1A5RyUJP87/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300"
                     >
                       <FontAwesomeIcon icon={faFacebook} className="h-6 w-6" />
-                    </a>
+                    </a> */}
                     <a
                       href="https://www.tiktok.com/@khan_ali094?_t=ZT-8vAKCt72GlC&_r=1"
                       target="_blank"
