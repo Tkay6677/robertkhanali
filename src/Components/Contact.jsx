@@ -186,7 +186,7 @@ const Contact = () => {
                     >
                       <FontAwesomeIcon icon={faTiktok} className="h-6 w-6" />
                     </a>
-                    <a
+                 {/*   <a
                       href="https://www.quora.com/profile/Robert-Khan-Ali?ch=10&oid=1334926317&share=d31bb5d6&srid=uaqyez&target_type=user"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -202,6 +202,7 @@ const Contact = () => {
                     >
                       <FontAwesomeIcon icon={faWhatsapp} className="h-6 w-6" />
                     </a>
+                    */}
                   </div>
                 </div>
               </div>
